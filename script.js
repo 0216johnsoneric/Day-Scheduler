@@ -24,7 +24,7 @@ $(document).ready(function () {
         timeRow.attr("class", "row");
     
         var timeSpan = $("<span>");
-        timeSpan.attr("class", "hour col");
+        timeSpan.attr("class", "col");
         timeSpan.text(hour.stringTime);
         timeRow.append(timeSpan);
 
