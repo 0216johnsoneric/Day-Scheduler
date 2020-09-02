@@ -18,18 +18,50 @@ $(document).ready(function () {
         { stringTime: "7PM", numTime: 1900 },
     ];
 
+    var days = [
+        {stringDay: "" },
+        {stringDay: "Monday"},
+        {stringDay: "Tuesday"},
+        {stringDay: "Wednesday"},
+        {stringDay: "Thursday"},
+        {stringDay: "Friday"},
+        {stringDay: "Saturday"},
+        {stringDay: "Sunday"},
+    ]
+
+    days.map((day) => {
+
+        var dayCol = $("<div>");
+        dayCol.attr("class", "col bg-secondary border border-dark");
+
+        var daySpan = $("<span>");
+        daySpan.text(day.stringDay);
+        dayCol.append(daySpan);
+        $(".dayblock").append(dayCol)
+
+    });
+
+
     time.map((hour) => {
     
         var timeRow = $("<div>");
         timeRow.attr("class", "row");
+
     
         var timeSpan = $("<span>");
         timeSpan.attr("class", "col");
         timeSpan.text(hour.stringTime);
         timeRow.append(timeSpan);
 
-        var timeDescription = $("<textarea>");
-        timeDescription.attr("class", "description");
+        for(i = 0 ; i< 7; i++){
+            var timeDescription = $("<textarea>");
+            timeDescription.attr("class", "col description border");
+            timeRow.append(timeDescription)
+        }
+
+
+        $(".timeblock").append(timeRow)
     });
+    //for loop for buttons, 
 
 });
