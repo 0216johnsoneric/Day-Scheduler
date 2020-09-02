@@ -53,12 +53,22 @@ $(document).ready(function () {
         timeSpan.text(hour.stringTime);
         timeRow.append(timeSpan);
 
+        var timeDescription = $("<textarea>");
         for(i = 0 ; i< 7; i++){
             var timeDescription = $("<textarea>");
             timeDescription.attr("class", "col description border");
             timeRow.append(timeDescription)
         }
 
+        var saveBtn = $("<button>");
+        saveBtn.attr("class", "saveBtn");
+        saveBtn.text("Save");
+
+        saveBtn.on("click", function () {
+            // THEN the text for that event is saved in local storage
+            var event = timeDescription.val();
+            localStorage.setItem(hour.stringTime, event);
+        });
 
         $(".timeblock").append(timeRow)
     });
