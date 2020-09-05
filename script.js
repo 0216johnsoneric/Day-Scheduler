@@ -29,6 +29,18 @@ $(document).ready(function () {
         {stringDay: "Sunday"},
     ]
 
+    var savedDays = [
+        { stringDay: "" },
+        { stringDay: "SaveMonday" },
+        { stringDay: "SaveTuesday" },
+        { stringDay: "SaveWednesday" },
+        { stringDay: "SaveThursday" },
+        { stringDay: "SaveFriday" },
+        { stringDay: "SaveSaturday" },
+        { stringDay: "SaveSunday" },
+
+    ]
+
     days.map((day) => {
 
         var dayCol = $("<div>");
@@ -60,18 +72,10 @@ $(document).ready(function () {
             timeRow.append(timeDescription)
         }
 
-        var saveBtn = $("<button>");
-        saveBtn.attr("class", "saveBtn");
-        saveBtn.text("Save");
-
-        saveBtn.on("click", function () {
-            // THEN the text for that event is saved in local storage
-            var event = timeDescription.val();
-            localStorage.setItem(hour.stringTime, event);
-        });
-
         $(".timeblock").append(timeRow)
     });
     //for loop for buttons, 
 
+
+    });
 });
