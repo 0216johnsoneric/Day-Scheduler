@@ -29,17 +29,6 @@ $(document).ready(function () {
         {stringDay: "Sunday"},
     ]
 
-    var savedDays = [
-        { stringDay: "" },
-        { stringDay: "SaveMonday" },
-        { stringDay: "SaveTuesday" },
-        { stringDay: "SaveWednesday" },
-        { stringDay: "SaveThursday" },
-        { stringDay: "SaveFriday" },
-        { stringDay: "SaveSaturday" },
-        { stringDay: "SaveSunday" },
-
-    ]
 
     days.map((day) => {
 
@@ -76,6 +65,4 @@ $(document).ready(function () {
     });
     //for loop for buttons, 
 
-
-    });
 });
