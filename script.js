@@ -91,8 +91,6 @@ $(document).ready(function () {
         $(".timeblock").append(timeRow);
             timeRow.append(timeDescription);
             timeRow.append(saveBtn);
-        // $(".timeblock").append(timeRow)
-        // $(".timeblock").append(saveBtn)
     });
     //for loop for buttons, 
 
