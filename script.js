@@ -65,10 +65,16 @@ $(document).ready(function () {
             saveBtn.attr("class", "saveBtn");
             saveBtn.text("Save");
 
-        // WHEN I click the save button for that timeblock
         saveBtn.on("click", function () {
             var event = timeDescription.val();
             localStorage.setItem(hour.stringTime, event);
+
+        var storedValue = localStorage.getItem(hour.stringTime);
+        // WHEN I refresh the page THEN the saved events persist
+            if (storedValue) {
+                timeDescription.val(storedValue);
+            }
+
         });
 
         $(".timeblock").append(timeRow)
