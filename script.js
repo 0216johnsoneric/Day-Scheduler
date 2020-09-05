@@ -46,22 +46,33 @@ $(document).ready(function () {
     time.map((hour) => {
     
         var timeRow = $("<div>");
-        timeRow.attr("class", "row");
+            timeRow.attr("class", "row");
 
     
         var timeSpan = $("<span>");
-        timeSpan.attr("class", "col");
-        timeSpan.text(hour.stringTime);
-        timeRow.append(timeSpan);
+            timeSpan.attr("class", "col");
+            timeSpan.text(hour.stringTime);
+            timeRow.append(timeSpan);
 
         var timeDescription = $("<textarea>");
-        for(i = 0 ; i< 7; i++){
+            for(i = 0 ; i< 7; i++){
             var timeDescription = $("<textarea>");
             timeDescription.attr("class", "col description border");
             timeRow.append(timeDescription)
         }
+        
+        var saveBtn = $("<button>");
+            saveBtn.attr("class", "saveBtn");
+            saveBtn.text("Save");
+
+        // WHEN I click the save button for that timeblock
+        saveBtn.on("click", function () {
+            var event = timeDescription.val();
+            localStorage.setItem(hour.stringTime, event);
+        });
 
         $(".timeblock").append(timeRow)
+        $(".timeblock").append(saveBtn)
     });
     //for loop for buttons, 
 
