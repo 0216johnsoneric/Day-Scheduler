@@ -25,14 +25,14 @@ $(document).ready(function () {
             timeRow.attr("class", "row");
 
         var timeSpan = $("<span>");
-            timeSpan.attr("class", "col");
+            timeSpan.attr("class", "col-2");
             timeSpan.text(hour.stringTime);
             timeRow.append(timeSpan);
 
         var timeDescription = $("<textarea>");
             for(i = 0 ; i< 7; i++){
             var timeDescription = $("<textarea>");
-            timeDescription.attr("class", "col 12 description border");
+            timeDescription.attr("class", "col description border");
             // timeRow.append(timeDescription)
         }
         
@@ -44,14 +44,18 @@ $(document).ready(function () {
             var event = timeDescription.val();
             localStorage.setItem(hour.stringTime, event);
 
+        });
+        
         var storedValue = localStorage.getItem(hour.stringTime);
+        console.log(storedValue)
         // WHEN I refresh the page THEN the saved events persist
             if (storedValue) {
                 timeDescription.val(storedValue);
             }
-        });
+        
 
         // Timeblock is color coded to indicate whether it is in the past, present, or future
+
         var setTime = parseInt(moment().format("HH") + "00");
         var setHour = parseInt(hour.numTime);
 
@@ -62,6 +66,7 @@ $(document).ready(function () {
         } else {
             timeDescription.addClass("future");
         }
+
 
         $(".timeblock").append(timeRow);
             timeRow.append(timeDescription);
