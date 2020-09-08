@@ -47,14 +47,12 @@ $(document).ready(function () {
         });
         
         var storedValue = localStorage.getItem(hour.stringTime);
-        console.log(storedValue)
-        // WHEN I refresh the page THEN the saved events persist
+            console.log(storedValue)
             if (storedValue) {
                 timeDescription.val(storedValue);
             }
         
-
-        // Timeblock is color coded to indicate whether it is in the past, present, or future
+        // Timeblock indicates if time is past, present, or future
 
         var setTime = parseInt(moment().format("HH") + "00");
         var setHour = parseInt(hour.numTime);
