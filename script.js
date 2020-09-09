@@ -46,10 +46,10 @@ $(document).ready(function () {
 
         });
         
-        var storedValue = localStorage.getItem(hour.stringTime);
-            console.log(storedValue)
-            if (storedValue) {
-                timeDescription.val(storedValue);
+        var savedValue = localStorage.getItem(hour.stringTime);
+            console.log(savedValue)
+            if (savedValue) {
+                timeDescription.val(savedValue);
             }
         
         // Timeblock indicates if time is past, present, or future
